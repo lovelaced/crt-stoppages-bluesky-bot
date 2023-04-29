@@ -1,0 +1,5 @@
+// waterways.ts
+export const waterways = [
+  'AL', 'AD', 'CE', 'FH', 'AW', 'AS', 'AN', 'BCN', 'BF', 'WZ', 'BP', 'WR', 'GZ', 'BK', 'BL', 'BZ', 'BC', 'CP', 'BG', 'BX', 'BI', 'LW', 'BE', 'BO', 'BS', 'BN', 'WV', 'WW', 'XX', 'WG', 'RC', 'ST', 'FB', 'SB', 'SG', 'TV', 'TC', 'TG', 'TL', 'TP', 'TD', 'TQ', 'WS', 'WA', 'BD', 'GO', 'HA', 'WO', 'BJ', 'WJ', 'BR', 'WL', 'WE', 'BA', 'WX', 'DE', 'WF', 'BBN', 'AC', 'BQ', 'CV', 'CI', 'LI', 'LB', 'LO', 'PC', 'TK', 'TH', 'WK', 'BT', 'CX', 'CL', 'CK', 'CH', 'CC', 'DC', 'DB', 'DJ', 'ER', 'CM', 'TT', 'FO', 'GS', 'OA', 'SJ', 'GU', 'GA', 'GB', 'GK', 'GL', 'FI', 'GH', 'GE', 'GN', 'GP', 'GX', 'GF', 'GG', 'GD', 'GV', 'GR', 'HU', 'HB', 'HN', 'KA', 'LC', 'LG', 'LL', 'LE', 'LR', 'LS', 'LM', 'LA', 'LP', 'LDN', 'BB', 'BW', 'MD', 'MI', 'MW', 'ND', 'PD', 'SD', 'MA', 'MC', 'ME', 'MB', 'MO', 'MG', 'NJ', 'TE', 'OX', 'OK', 'OB', 'OF', 'OD', 'OE', 'OH', 'OW', 'OR', 'OS', 'PF', 'PB', 'PO', 'RE', 'RI', 'AI', 'RO', 'RS', 'SO', 'SR', 'RT', 'WI', 'RD', 'SE', 'SH', 'DD', 'FT', 'SP', 'SU', 'SM', 'UD', 'LT', 'SW', 'HT', 'FK', 'SUA', 'SK', 'SN', 'SS', 'SA', 'TM', 'UT', 'WM', 'WC', 'WB'
+];
+
