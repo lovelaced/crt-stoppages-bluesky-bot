@@ -31,7 +31,7 @@ const getNoticeType = (type: number): string => {
   }
 };
 
-const formatTweet = (
+const formatSkeet = (
   title: string,
   startDate: string | null,
   endDate: string | null,
@@ -40,22 +40,22 @@ const formatTweet = (
   noticeType: number,
   url: string,
 ): string => {
-  let tweet = `${title.trim()}\n${getNoticeType(noticeType)}\n`;
+  let skeet = `${title.trim()}\n${getNoticeType(noticeType)}\n`;
   if (startDate) {
-    tweet += `Starts: ${formatDate(startDate)} `;
+    skeet += `Starts: ${formatDate(startDate)} `;
   }
   if (endDate) {
-    tweet += `Ends: ${formatDate(endDate)} `;
+    skeet += `Ends: ${formatDate(endDate)} `;
   }
-  tweet = tweet.trim();
+  skeet = skeet.trim();
   if (startAt) {
-    tweet += `\nFrom: ${startAt.trim()}`;
+    skeet += `\nFrom: ${startAt.trim()}`;
   }
   if (endAt) {
-    tweet += `\nTo: ${endAt.trim()}`;
+    skeet += `\nTo: ${endAt.trim()}`;
   }
-  tweet += `\nMore info: ${url}`;
-  return tweet.length > 265 ? tweet.slice(0, 262) + '...' : tweet;
+  skeet += `\nMore info: ${url}`;
+  return skeet.length > 265 ? skeet.slice(0, 262) + '...' : skeet;
 };
 
 const extractJsonData = (html: string): any[] => {
@@ -69,7 +69,7 @@ const extractJsonData = (html: string): any[] => {
 };
 
 const filterNotices = (notices: NavigationNotice[], baseUrl: string): [NavigationNotice, string][] => {
-  const tweets = notices
+  const skeets = notices
     .filter((notice) => notice.startDate)
     .map<[NavigationNotice, string]>((notice) => { // Explicitly type the tuple here
       const title = notice.headline;
@@ -80,9 +80,9 @@ const filterNotices = (notices: NavigationNotice[], baseUrl: string): [Navigatio
       const noticeType = notice.noticeType;
       const path = notice.path;
       const url = `${baseUrl}${path}`;
-      return [notice, formatTweet(title, startDate, endDate, startAt, endAt, noticeType, url)];
+      return [notice, formatSkeet(title, startDate, endDate, startAt, endAt, noticeType, url)];
     });
-  return tweets;
+  return skeets;
 };
 
 export const scrapeWebPage = async (url: string, debugMode: boolean = false): Promise<[NavigationNotice, string][]> => {
@@ -92,8 +92,8 @@ export const scrapeWebPage = async (url: string, debugMode: boolean = false): Pr
     if (debugMode) {
       console.log('[DEBUG] JSON data:', jsonData);
     }
-    const tweets = filterNotices(jsonData, 'https://canalrivertrust.org.uk');
-    return tweets;
+    const skeets = filterNotices(jsonData, 'https://canalrivertrust.org.uk');
+    return skeets;
   } catch (error) {
     if (error instanceof Error) {
       console.error(`Error scraping the web page: ${error.message}`);

@@ -43,8 +43,8 @@ const postNavigationNoticesToBluesky = async () => {
     const notices = await scrapeWebPage(targetUrl, DEBUG_MODE);
     const reversedNotices = notices.reverse();
 
-    for (const [originalNotice, tweetText] of reversedNotices as [NavigationNotice, string][]) {
-      const postText = tweetText;
+    for (const [originalNotice, skeetText] of reversedNotices as [NavigationNotice, string][]) {
+      const postText = skeetText;
       const noticeCreated = new Date(originalNotice.startDate);
 
       if (isNaN(noticeCreated.getTime())) {
